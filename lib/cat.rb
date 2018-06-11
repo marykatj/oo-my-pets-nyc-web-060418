@@ -35,8 +35,8 @@ end
 #
 #class Cat < Pet
 #
-#   def initialize(name)
-#   super(name)
+#   def initialize(name)      name needs to be defined within context here.  Super will call initialize method defined in pet.
+#   super(name)               calls initialize method on cat, but tell it to expect argument (name).  Was being passed in somewhere, but not making it up
 #   @num_lives = 9
 #   end
 # end
