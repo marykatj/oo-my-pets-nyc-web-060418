@@ -49,7 +49,7 @@ class Owner
 
   def walk_dogs
     @pets[:dogs].each do |dog|        #self.pets[:dogs].each { |dog| dog.mood = "happy" }
-      dog.mood = "happy"              #map versus each - depends on whether we are using the return value
+      dog.mood = "happy"              #map versus each - depends on whether we are using the return value. Use .each because dont carea about return value
     end
   end
 
