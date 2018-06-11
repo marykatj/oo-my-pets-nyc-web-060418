@@ -17,11 +17,11 @@ class Owner
   end
 
   def self.count
-    @@owners.length
-  end
+    @@owners.length          #self.all.length       since in a class method (self.count) refer to self.all.length (instead of self.class.all.length)
+  end                                               #if this was an instance method, then call self.class.all.length
 
   def self.reset_all
-    @@owners.clear            #self.class.all.clear
+    @@owners.clear            #self.all.clear
   end
 
   def buy_cat(cat_name)
