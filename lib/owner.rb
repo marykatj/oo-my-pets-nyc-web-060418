@@ -66,7 +66,7 @@ class Owner
   end
 
   def sell_pets
-    @pets.each do |animal, animal_names|
+    @pets.each do |animal, animal_names|      #self.pets.each do |pet_type, pet_array|
       animal_names.each do |name|
         name.mood = "nervous"
       end
