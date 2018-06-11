@@ -66,8 +66,8 @@ class Owner
   end
 
   def sell_pets
-    @pets.each do |animal, animal_names|      #self.pets.each do |pet_type, pet_array|            pest[:dogs].concat(pets[:cats]).concat(pets[:fishes])  but slightly hard coded
-      animal_names.each do |name|
+    @pets.each do |animal, animal_names|      #self.pets.each do |pet_type, pet_array|            pets[:dogs].concat(pets[:cats]).concat(pets[:fishes])  but slightly hard coded
+      animal_names.each do |name|                                                                 # all_pets.each { |pet_instance| pet_instance.mood = 'nervous'}
         name.mood = "nervous"
       end
       animal_names.clear        #or reset to the original value
