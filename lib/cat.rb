@@ -28,6 +28,28 @@ end
 #   end
 # end
 #
+#class Cat < Pets
+#class Dog < Pets
+#class Fish < Pets
+#
+#
+#class Cat < Pet
+#
+#   def initialize(name)
+#   super(name)
+#   @num_lives = 9
+#   end
+# end
+
+#
+#
+#
+#
+#
+#
+#
+#
+#
 #
 #
 #
