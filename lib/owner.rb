@@ -65,7 +65,7 @@ class Owner
     end
   end
 
-  def sell_pets
+  def sell_pets                                                                                   #OR concat all arrays into one array of all pets
     @pets.each do |animal, animal_names|      #self.pets.each do |pet_type, pet_array|            all_pets = pets[:dogs].concat(pets[:cats]).concat(pets[:fishes])  but slightly hard coded
       animal_names.each do |name|                                                                 # all_pets.each { |pet_instance| pet_instance.mood = 'nervous'}
         name.mood = "nervous"                                                                     # self.pets = {fishes: [], cats: [], dogs: []}
