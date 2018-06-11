@@ -9,7 +9,7 @@ class Owner
   def initialize(name)
     @name = name
     @pets = {fishes: [], cats: [], dogs: []}
-    @@owners << self            # self.class.all << self    relying on method, instead of literal variable
+    @@owners << self            # self.class.all << self    relying on method, instead of literal variable.  Need to be explicit with 'self' here
   end
 
   def self.all
@@ -18,7 +18,7 @@ class Owner
 
   def self.count
     @@owners.length          #self.all.length       since in a class method (self.count) refer to self.all.length (instead of self.class.all.length)
-  end                                               #if this was an instance method, then call self.class.all.length
+  end                                               #if this was an instance method, then call self.class.all.length. can call self implicitly.   Implicit self.pets
 
   def self.reset_all
     @@owners.clear            #self.all.clear
