@@ -1,4 +1,4 @@
-require "pry"
+require "pry"         # learn --f-f
 
 class Owner
 
@@ -21,7 +21,7 @@ class Owner
   end
 
   def self.reset_all
-    @@owners.clear
+    @@owners.clear            #self.class.clear
   end
 
   def buy_cat(cat_name)
