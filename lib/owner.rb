@@ -26,7 +26,7 @@ class Owner
 
   def buy_cat(cat_name)
     new_cat = Cat.new(cat_name)           #pets[:cats] << Cat.new(cat_name)......optional: self.pets[:cats] << Cat.new(cat_name)
-    @pets[:cats].push(new_cat)
+    @pets[:cats].push(new_cat)          #ruby recognizes this as an instance method, knows its an instance property, and operates accordingly
   end
 
   def buy_dog(dog_name)
