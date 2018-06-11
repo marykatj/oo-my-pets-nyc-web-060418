@@ -70,7 +70,7 @@ class Owner
       animal_names.each do |name|
         name.mood = "nervous"
       end
-      animal_names.clear
+      animal_names.clear        #or reset to the original value
     end
   end
 
