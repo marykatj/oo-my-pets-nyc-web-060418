@@ -21,7 +21,7 @@ class Owner
   end
 
   def self.reset_all
-    @@owners.clear            #self.class.clear
+    @@owners.clear            #self.class.all.clear
   end
 
   def buy_cat(cat_name)
