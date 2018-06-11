@@ -2,8 +2,8 @@ require "pry"         # learn --f-f
 
 class Owner
 
-  attr_reader :species
-  attr_accessor :pets, :name
+  attr_reader :species            #assume least amount of mutability
+  attr_accessor :pets, :name      #name & name=
   @@owners = []
 
   def initialize(name)
