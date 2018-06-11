@@ -9,7 +9,7 @@ class Owner
   def initialize(name)
     @name = name
     @pets = {fishes: [], cats: [], dogs: []}
-    @@owners << self
+    @@owners << self            # self.class.all << self    relying on method, instead of literal variable
   end
 
   def self.all
