@@ -13,7 +13,7 @@ class Owner
   end
 
   def self.all
-    @@owners
+    @@owners              #layer of abraction, if code changes, only need to change in 1 place.  use self.all to reference @@owners array
   end
 
   def self.count
