@@ -1,32 +1,32 @@
-require "pry"
+require "pry"         # learn --f-f
 
 class Owner
 
-  attr_reader :species
-  attr_accessor :pets, :name
+  attr_reader :species            #assume least amount of mutability
+  attr_accessor :pets, :name      #name & name=
   @@owners = []
 
   def initialize(name)
     @name = name
     @pets = {fishes: [], cats: [], dogs: []}
-    @@owners << self
+    @@owners << self            # self.class.all << self    relying on method, instead of literal variable.  Need to be explicit with 'self' here
   end
 
   def self.all
-    @@owners
+    @@owners              #layer of abraction, if code changes, only need to change in 1 place.  use self.all to reference @@owners array
   end
 
   def self.count
-    @@owners.length
-  end
+    @@owners.length          #self.all.length       since in a class method (self.count) refer to self.all.length (instead of self.class.all.length)
+  end                                               #if this was an instance method, then call self.class.all.length. can call self implicitly.   Implicit self.pets
 
   def self.reset_all
-    @@owners.clear
+    @@owners.clear            #self.all.clear
   end
 
   def buy_cat(cat_name)
-    new_cat = Cat.new(cat_name)
-    @pets[:cats].push(new_cat)
+    new_cat = Cat.new(cat_name)           #pets[:cats] << Cat.new(cat_name)......optional: self.pets[:cats] << Cat.new(cat_name)
+    @pets[:cats].push(new_cat)          #ruby recognizes this as an instance method, knows its an instance property, and operates accordingly
   end
 
   def buy_dog(dog_name)
@@ -48,8 +48,8 @@ class Owner
   end
 
   def walk_dogs
-    @pets[:dogs].each do |dog|
-      dog.mood = "happy"
+    @pets[:dogs].each do |dog|        #self.pets[:dogs].each { |dog| dog.mood = "happy" }
+      dog.mood = "happy"              #map versus each - depends on whether we are using the return value. Use .each because dont carea about return value
     end
   end
 
@@ -65,12 +65,12 @@ class Owner
     end
   end
 
-  def sell_pets
-    @pets.each do |animal, animal_names|
-      animal_names.each do |name|
-        name.mood = "nervous"
+  def sell_pets                                                                                   #OR concat all arrays into one array of all pets
+    @pets.each do |animal, animal_names|      #self.pets.each do |pet_type, pet_array|            all_pets = pets[:dogs].concat(pets[:cats]).concat(pets[:fishes])  but slightly hard coded
+      animal_names.each do |name|                                                                 # all_pets.each { |pet_instance| pet_instance.mood = 'nervous'}
+        name.mood = "nervous"                                                                     # self.pets = {fishes: [], cats: [], dogs: []}
       end
-      animal_names.clear
+      animal_names.clear        #or reset to the original value
     end
   end
 
